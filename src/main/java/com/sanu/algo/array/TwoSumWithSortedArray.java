@@ -9,6 +9,14 @@ public class TwoSumWithSortedArray {
             System.out.println(Arrays.toString(twoSumSorted(new int[]{2,7,11,15},9)));
     }
 
+    /**
+     * Adding a scenario to twoSum where we have a sorted array
+     * Since the array is sorted we can take two pointer approach to find the sum
+     * if the sum of first and last is greater, move back end by 1
+     * else start ahead by 1
+     *
+     * repeat this till you fins the sum
+     */
     public static int[] twoSumSorted(int nums[],int target){
 
         int start = 0;
