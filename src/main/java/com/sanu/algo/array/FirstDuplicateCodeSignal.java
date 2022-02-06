@@ -1,5 +1,6 @@
 package com.sanu.algo.array;
 
+import java.util.Arrays;
 import java.util.HashMap;
 
 /**
@@ -23,11 +24,11 @@ import java.util.HashMap;
 public class FirstDuplicateCodeSignal {
 
     public static void main(String[] args) {
-        System.out.println(firstDuplicate(new int[]{2, 1, 3, 5, 3, 2}));
-        System.out.println(firstDuplicate(new int[]{2, 4, 3, 5, 1}));
-
-        System.out.println(firstDuplicateOptimized(new int[]{2, 1, 3, 5, 3, 2}));
-        System.out.println(firstDuplicateOptimized(new int[]{2, 4, 3, 5, 1}));
+        System.out.println(firstDuplicatePractice(new int[]{2, 1, 3, 5, 3, 2}));
+//        System.out.println(firstDuplicate(new int[]{2, 4, 3, 5, 1}));
+//
+//        System.out.println(firstDuplicateOptimized(new int[]{2, 1, 3, 5, 3, 2}));
+//        System.out.println(firstDuplicateOptimized(new int[]{2, 4, 3, 5, 1}));
     }
 
     //O(n) time and O(n) space
@@ -54,5 +55,33 @@ public class FirstDuplicateCodeSignal {
             arr[Math.abs(arr[i])-1]=-arr[Math.abs(arr[i])-1];
         }
     return -1;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public static int firstDuplicatePractice(int nums[]){
+        for(int i=0;i<nums.length;i++){
+            if(nums[Math.abs(nums[i])-1]<0){
+                 return Math.abs(nums[i]);
+            }
+            nums[Math.abs(nums[i])-1]=- nums[Math.abs(nums[i])-1];
+        }
+        return -1;
     }
 }

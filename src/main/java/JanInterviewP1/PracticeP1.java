@@ -21,6 +21,8 @@ public class PracticeP1 {
         //Second highest sal emp
         employeeList.stream().sorted(Comparator.comparingInt(Employee::getSalary).reversed()).skip(1).findFirst();
 
+//        employeeList.stream().sorted(Comparator.comparingInt(Employee::getSalary).reversed()).skip(1).findFirst();
+//        employeeList.stream().collect(groupingBy(x->x.empDept,collectingAndThen(maxBy(comparingInt(x->x.salary)),Optional::get)))
 
     }
 }

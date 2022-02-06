@@ -6,6 +6,8 @@ public class KthLargestElementInArray {
 
     public static void main(String[] args) {
 
+        System.out.println(findKthLargestElement(new int[]{1,2,3,4,5},2));
+
     }
 
     /**
@@ -38,5 +40,17 @@ public class KthLargestElementInArray {
         }
         return minHeap.remove();
 
+    }
+
+
+    public static int findKthLargestElement(int nums[],int k){
+        PriorityQueue<Integer> minHeap = new PriorityQueue<>();
+        for(int i=0;i<nums.length;i++){
+            minHeap.add(nums[i]);
+            if(minHeap.size()>k){
+                minHeap.remove();
+            }
+        }
+        return minHeap.remove();
     }
 }

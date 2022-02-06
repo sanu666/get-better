@@ -37,4 +37,16 @@ public class UniquePermutationsOfGivenString {
         return String.valueOf(charArr);
 
     }
+
+    public static void practice(String str,int start,int end){
+        if(start==end-1)
+            System.out.println(str);
+        else {
+            for (int i = start; i < end; i++) {
+                str = swap(str, start, i);
+                practice(str, start + 1, end);
+                str = swap(str, start, i);
+            }
+        }
+    }
 }

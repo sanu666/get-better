@@ -4,7 +4,7 @@ public class AllCombinationsOfGivenArray {
 
     public static void main(String[] args) {
 
-        findCombination(new char[]{'1','2','3'});
+        printAllCombos(new char[]{'1','2','3'});
 
     }
 
@@ -71,20 +71,23 @@ public class AllCombinationsOfGivenArray {
 
 
 
+        public static void printAllCombos(char[] n){
 
+        long powerSet  = (long) Math.pow(2,n.length);
 
-
-
-        public static void allCombo(int arr[]){
-        long countSet = (long)Math.pow(2,arr.length-1);
-
-        for(int counter = 0;counter<countSet;counter++){
-            for(int j=0;j<arr.length;j++){
-                if((counter & 1<<j)>0)
-                    System.out.println(arr[j]);
+        for(int i=0;i<powerSet;i++){
+            for(int j=0;j<n.length;j++){
+                if((i & ( 1 << j))>0){
+                    System.out.print(n[j] +" ");
+                }
             }
             System.out.println();
         }
+
+
+
+
+
 
 
         }
